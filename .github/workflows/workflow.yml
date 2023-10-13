@@ -56,7 +56,6 @@ jobs:
  #           az group list
  #           pwd   
      
-
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
       continue-on-error: false
