@@ -46,9 +46,9 @@ jobs:
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
       with:
-        client-id: abec917b-9015-4f61-816c-de68ad53cff8
-        tenant-id: 0e2eb8d8-b8c9-4ee3-97e0-07f405398b85
-        subscription-id: 9e84a466-f5f9-4b99-85b1-cf49bbb530fb
+        client-id: 'abec917b-9015-4f61-816c-de68ad53cff8'
+        tenant-id: '0e2eb8d8-b8c9-4ee3-97e0-07f405398b85'
+        subscription-id: '9e84a466-f5f9-4b99-85b1-cf49bbb530fb'
    
     - name: 'Run Azure CLI commands'
       run: |
@@ -57,11 +57,11 @@ jobs:
             pwd   
 
      
- #   - name: 'Login via Azure CLI'
- #     uses: azure/login@v1
- #     continue-on-error: false
- #     with:
- #       creds: ${{ secrets.AZURE_CREDENTIALS }}
+   # - name: 'Login via Azure CLI'
+   #   uses: azure/login@v1
+   #   continue-on-error: false
+   #   with:
+   #     creds: ${{ secrets.AZURE_CREDENTIALS }}
      
 
     - name: 'Azure Load Testing'
