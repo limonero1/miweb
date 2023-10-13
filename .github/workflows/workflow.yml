@@ -66,9 +66,9 @@ jobs:
     - name: 'Azure Load Testing'
       uses: azure/load-testing@v1
       with:
-        loadTestConfigFile: 'miweb/logintest.yaml'
-        loadTestResource: 'MiguelGarcia'
-        resourceGroup: 'MiguelGarcia'
+        loadTestConfigFile: miweb/logintest.yaml
+        loadTestResource: MiguelGarcia
+        resourceGroup: MiguelGarcia
 
     - uses: actions/upload-artifact@v2
       with:
