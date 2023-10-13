@@ -66,7 +66,7 @@ jobs:
     - name: 'Azure Load Testing'
       uses: azure/load-testing@v1
       with:
-        loadTestConfigFile: miweb/logintest.yaml
+        loadTestConfigFile: logintest.yaml
         loadTestResource: MiguelGarcia
         resourceGroup: MiguelGarcia
 
