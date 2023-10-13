@@ -61,7 +61,7 @@ jobs:
       uses: azure/login@v1
       continue-on-error: false
       with:
-        creds: '{"clientId": "abec917b-9015-4f61-816c-de68ad53cff8", "clientSecret": "cfcbb634-9162-4b5c-9ec5-8765a3424dc4", "subscriptionId": "dbb44df0-8a01-4b7a-84c7-a15173ede004", "tenantId": "0e2eb8d8-b8c9-4ee3-97e0-07f405398b85", "activeDirectoryEndpointUrl": "https://login.microsoftonline.com", "resourceManagerEndpointUrl": "https://management.azure.com/", "activeDirectoryGraphResourceId": "https://graph.windows.net/", "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/", "galleryEndpointUrl": "https://gallery.azure.com/", "managementEndpointUrl": "https://management.core.windows.net/"}'
+        creds: '{"clientId": "abec917b-9015-4f61-816c-de68ad53cff8", "clientSecret": "JHS8Q~zFQ9zq7DvSy6pL87b_bF.tXmah0Jkz7b8G", "subscriptionId": "dbb44df0-8a01-4b7a-84c7-a15173ede004", "tenantId": "0e2eb8d8-b8c9-4ee3-97e0-07f405398b85", "activeDirectoryEndpointUrl": "https://login.microsoftonline.com", "resourceManagerEndpointUrl": "https://management.azure.com/", "activeDirectoryGraphResourceId": "https://graph.windows.net/", "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/", "galleryEndpointUrl": "https://gallery.azure.com/", "managementEndpointUrl": "https://management.core.windows.net/"}'
 
     - name: 'Azure Load Testing'
       uses: azure/load-testing@v1
