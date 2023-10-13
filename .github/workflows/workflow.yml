@@ -67,8 +67,8 @@ jobs:
       uses: azure/load-testing@v1
       with:
         loadTestConfigFile: 'logintest.yaml'
-        loadTestResource: logintest.jmx
-        resourceGroup: MiguelGarcia
+        loadTestResource: 'logintest.jmx'
+        resourceGroup: 'MiguelGarcia'
 
     - uses: actions/upload-artifact@v2
       with:
