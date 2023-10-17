@@ -1,7 +1,7 @@
 version: v0.1
 testName: loadtesting
-testPlan: logintest.jmx
+testPlan: logintestuno.jmx
 description: 'Prueba de LoadTest en Azure'
-engineInstances: 1
+engineInstances: 2
 failureCriteria: []
 splitAllCSVs: False
