@@ -43,31 +43,30 @@ jobs:
     - name: 'Checkout GitHub Action'
       uses: actions/checkout@v3
 
+ #   - name: 'Login via Azure CLI'
+ #     uses: azure/login@v1
+ #     with:
+ #       client-id: 'abec917b-9015-4f61-816c-de68ad53cff8'
+ #       tenant-id: '0e2eb8d8-b8c9-4ee3-97e0-07f405398b85'
+ #       subscription-id: '9e84a466-f5f9-4b99-85b1-cf49bbb530fb'
+ #  
+ #   - name: 'Run Azure CLI commands'
+ #     run: |
+ #           az account show
+ #           az group list
+ #           pwd   
+     
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
+      continue-on-error: false
       with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-   
-    - name: 'Run Azure CLI commands'
-      run: |
-            az account show
-            az group list
-            pwd   
-     
-
-#    - name: 'Login via Azure CLI'
-#      uses: azure/login@v1
-#      continue-on-error: false
-#      with:
-#        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: '{"clientId": "abec917b-9015-4f61-816c-de68ad53cff8", "clientSecret": "JHS8Q~zFQ9zq7DvSy6pL87b_bF.tXmah0Jkz7b8G", "subscriptionId": "dbb44df0-8a01-4b7a-84c7-a15173ede004", "tenantId": "0e2eb8d8-b8c9-4ee3-97e0-07f405398b85", "activeDirectoryEndpointUrl": "https://login.microsoftonline.com", "resourceManagerEndpointUrl": "https://management.azure.com/", "activeDirectoryGraphResourceId": "https://graph.windows.net/", "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/", "galleryEndpointUrl": "https://gallery.azure.com/", "managementEndpointUrl": "https://management.core.windows.net/"}'
 
     - name: 'Azure Load Testing'
       uses: azure/load-testing@v1
       with:
-        loadTestConfigFile: 'logintest.yaml'
-        loadTestResource: logintest.jmx
+        loadTestConfigFile: logintest.yaml
+        loadTestResource: MiguelGarcia
         resourceGroup: MiguelGarcia
 
     - uses: actions/upload-artifact@v2
