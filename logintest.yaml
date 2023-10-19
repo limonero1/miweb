@@ -3,5 +3,7 @@ testName: loadtesting
 testPlan: logintest.jmx
 description: 'Prueba de LoadTest en Azure'
 engineInstances: 2
+configurationFiles:
+- login.csv
 failureCriteria: []
 splitAllCSVs: False
