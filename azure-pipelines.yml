@@ -19,7 +19,7 @@ stages:
               - task: AzureLoadTest@1
                 displayName: Load Testing
                 inputs:
-                  azureSubscription: baufest
+                  azureSubscription: ALT_SC_73bfea0e-9306-4531-9c32-52dcc2f5401d
                   loadTestConfigFile: logintest.yaml
                   loadTestResource: MiguelGarcia
                   resourceGroup: MiguelGarcia
