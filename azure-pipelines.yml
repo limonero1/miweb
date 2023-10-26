@@ -3,21 +3,24 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- master
-
-pool:
-  vmImage: ubuntu-latest
-strategy:
-  runOnce:
-    deploy:
-      steps:
-      - task: AzureLoadTest@1
-        inputs:
-        azureSubscription: $(serviceConnection)
-        loadTestConfigFile: logintest.yaml
-        loadTestResource: MiguelGarcia
-        resourceGroup: MiguelGarcia
-        
-      - publish: $(System.DefaultWorkingDirectory)/loadTest
-        artifact: loadTestResults
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:
+    - deployment: deploy
+      displayName: Load Testing
+      pool:
+        vmImage: ubuntu-latest
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - task: AzureLoadTest@1
+                displayName: Load Testing
+                inputs:
+                  azureSubscription: $(serviceConnection)
+                  loadTestConfigFile: logintest.yaml
+                  loadTestResource: MiguelGarcia
+                  resourceGroup: MiguelGarcia
+              - publish: $(System.DefaultWorkingDirectory)/loadTest
+                artifact: loadTestResults
