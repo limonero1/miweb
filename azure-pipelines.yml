@@ -15,4 +15,6 @@ pool:
         loadTestConfigFile: 'logintest.yaml'
         loadTestResource: MiguelGarcia
         resourceGroup: MiguelGarcia
-
+        
+- publish: $(System.DefaultWorkingDirectory)/loadTest
+      artifact: loadTestResults
