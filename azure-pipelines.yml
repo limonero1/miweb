@@ -8,13 +8,16 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
-- task: AzureLoadTest@1
-      inputs:
+strategy:
+  runOnce:
+    deploy:
+      steps:
+      - task: AzureLoadTest@1
+        inputs:
         azureSubscription: $(serviceConnection)
         loadTestConfigFile: 'logintest.yaml'
         loadTestResource: MiguelGarcia
         resourceGroup: MiguelGarcia
         
-- publish: $(System.DefaultWorkingDirectory)/loadTest
-      artifact: loadTestResults
+      - publish: $(System.DefaultWorkingDirectory)/loadTest
+        artifact: loadTestResults
