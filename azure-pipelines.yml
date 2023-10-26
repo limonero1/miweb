@@ -15,7 +15,7 @@ strategy:
       - task: AzureLoadTest@1
         inputs:
         azureSubscription: $(serviceConnection)
-        loadTestConfigFile: 'logintest.yaml'
+        loadTestConfigFile: logintest.yaml
         loadTestResource: MiguelGarcia
         resourceGroup: MiguelGarcia
         
