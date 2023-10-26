@@ -20,7 +20,7 @@ stages:
                 displayName: Load Testing
                 inputs:
                   azureSubscription: ALT_SC_73bfea0e-9306-4531-9c32-52dcc2f5401d
-                  loadTestConfigFile: logintest.yaml
+                  loadTestConfigFile: 'logintest.yaml'
                   loadTestResource: MiguelGarcia
                   resourceGroup: MiguelGarcia
               - publish: $(System.DefaultWorkingDirectory)/loadTest
