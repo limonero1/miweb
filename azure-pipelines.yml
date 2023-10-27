@@ -23,7 +23,7 @@ stages:
             - task: AzureLoadTest@1
               displayName: Load Testing
               inputs:
-                azureSubscription: magarcia
+                azureSubscription: loadtesting
                 loadTestConfigFile: 'logintest.yaml'
                 loadTestResource: MiguelGarcia
                 resourceGroup: MiguelGarcia
