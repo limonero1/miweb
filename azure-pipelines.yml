@@ -16,12 +16,16 @@ stages:
         runOnce:
           deploy:
             steps:
-              - task: AzureLoadTest@1
-                displayName: Load Testing
-                inputs:
-                  azureSubscription: ALT_SC_73bfea0e-9306-4531-9c32-52dcc2f5401d
-                  loadTestConfigFile: '/home/vsts/work/1/s/logintest.yaml'
-                  loadTestResource: MiguelGarcia
-                  resourceGroup: MiguelGarcia
-              - publish: $(System.DefaultWorkingDirectory)/loadTest
-                artifact: loadTestResults
+            - checkout: self
+              persistCredentials: true
+            #  enabled:
+              displayName: Git clone source code
+            - task: AzureLoadTest@1
+              displayName: Load Testing
+              inputs:
+                azureSubscription: ALT_SC_73bfea0e-9306-4531-9c32-52dcc2f5401d
+                loadTestConfigFile: 'logintest.yaml'
+                loadTestResource: MiguelGarcia
+                resourceGroup: MiguelGarcia
+            - publish: $(System.DefaultWorkingDirectory)/loadTest
+              artifact: loadTestResults
